@@ -131,6 +131,16 @@ Cell Biology and Genetics.</license.copyrightOwners>
 			<groupId>io.scif</groupId>
 			<artifactId>scifio</artifactId>
 		</dependency>
+		
+		<!-- BDV and Vistools -->
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>bigdataviewer-vistools</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>bigdataviewer-core</artifactId>
+		</dependency>
 
 		<!-- Provided scope dependencies -->
 		<dependency>
