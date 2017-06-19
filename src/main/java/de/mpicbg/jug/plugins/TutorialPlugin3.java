@@ -86,17 +86,18 @@ public class TutorialPlugin3< T extends RealType< T > & NativeType< T >> impleme
 		final BdvSource bdvSource1 = BdvFunctions.show(
 				imgPlus,
 				imgPlus.getName(),
-				Bdv.options().addTo( bdvHandlePanel ) );
+				Bdv.options().addTo( bdvHandlePanel ).sourceTransform( 1, 1, 8 ) );
 
 		final BdvSource bdvSourceDrosoDots = BdvFunctions.show(
 				imgPlusDots,
 				"DOTS",
-				Bdv.options().addTo( bdvHandlePanel ) );
+				Bdv.options().addTo( bdvHandlePanel ).sourceTransform( 1, 1, 8 ) );
 
-		bdvSourceDrosoDots.setDisplayRangeBounds( 0, 1 );
-		bdvSourceDrosoDots.setDisplayRange( 0, 1 );
+		bdvSourceDrosoDots.setDisplayRangeBounds( 0, 255 );
+		bdvSourceDrosoDots.setDisplayRange( 0, 255 );
 		bdvSourceDrosoDots.setColor( new ARGBType( 0xFF0000 ) );
-		bdvSourceDrosoDots.setActive( true );
+
+		bdvSource1.setActive( true );
 
 	}
 
