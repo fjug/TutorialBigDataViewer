@@ -46,9 +46,6 @@ public class TutorialPlugin3< T extends RealType< T > & NativeType< T >> impleme
 	private ImgPlus< ? > imgPlusDots;
 	private JFrame frame;
 
-	/**
-	 *
-	 */
 	public TutorialPlugin3() {
 		final String filename = "droso_dots.tif";
 		final URL iconURL = ClassLoader.getSystemClassLoader().getResource( filename );
