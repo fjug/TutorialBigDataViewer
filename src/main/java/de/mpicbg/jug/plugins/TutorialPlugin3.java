@@ -23,7 +23,6 @@ import bdv.util.BdvSource;
 import net.imagej.Dataset;
 import net.imagej.ImageJ;
 import net.imagej.ImgPlus;
-import net.imagej.display.DatasetView;
 import net.imglib2.type.NativeType;
 import net.imglib2.type.numeric.ARGBType;
 import net.imglib2.type.numeric.RealType;
@@ -40,9 +39,8 @@ import net.imglib2.type.numeric.RealType;
 public class TutorialPlugin3< T extends RealType< T > & NativeType< T >> implements Command {
 
 	@Parameter( label = "3D ImgPlus to be shown." )
-	private DatasetView datasetView;
-
 	private ImgPlus< T > imgPlus;
+
 	private ImgPlus< ? > imgPlusDots;
 	private JFrame frame;
 
@@ -65,10 +63,8 @@ public class TutorialPlugin3< T extends RealType< T > & NativeType< T >> impleme
 	/**
 	 * @see java.lang.Runnable#run()
 	 */
-	@SuppressWarnings( "unchecked" )
 	@Override
 	public void run() {
-		imgPlus = ( ImgPlus< T > ) datasetView.getData().getImgPlus();
 		frame = new JFrame( "BDV Vistools Tutorial 3" );
 		frame.add( new JLabel( "This is our own JFrame!" ), BorderLayout.SOUTH );
 		frame.setBounds( 50, 50, 512, 512 );
