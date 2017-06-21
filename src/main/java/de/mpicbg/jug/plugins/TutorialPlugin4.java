@@ -86,12 +86,16 @@ public class TutorialPlugin4< T extends RealType< T > & NativeType< T >> impleme
 	 */
 	private ArrayList< RealPoint > getTutorial4Points() {
 		final String filename = "dots.csv";
+		
+		
 		final URL iconURL = ClassLoader.getSystemClassLoader().getResource( filename );
 		List< String > lines = null;
 		final ArrayList< RealPoint > points = new ArrayList<>();
+		
 		try {
-			lines = Files.readAllLines( Paths.get( iconURL.getPath() ), Charset.forName( "UTF-8" ) );
-
+			final boolean IS_WINDOWS = System.getProperty( "os.name" ).contains( "indow" );
+			final String osAppropriatePath = IS_WINDOWS ? iconURL.getPath().substring(1) : iconURL.getPath();
+			lines = Files.readAllLines( Paths.get(osAppropriatePath), Charset.forName( "UTF-8" ) );
 			for ( final String line : lines ) {
 				if ( line.startsWith( "#" ) ) {
 					continue;
