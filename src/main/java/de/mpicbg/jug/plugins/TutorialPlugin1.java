@@ -11,7 +11,6 @@ import org.scijava.plugin.Plugin;
 import bdv.util.Bdv;
 import bdv.util.BdvFunctions;
 import net.imagej.ImgPlus;
-import net.imagej.display.DatasetView;
 import net.imglib2.type.NativeType;
 import net.imglib2.type.numeric.RealType;
 
@@ -27,17 +26,14 @@ import net.imglib2.type.numeric.RealType;
 public class TutorialPlugin1< T extends RealType< T > & NativeType< T >> implements Command {
 
 	@Parameter( label = "3D ImgPlus to be shown." )
-	private DatasetView datasetView;
-
 	private ImgPlus< T > imgPlus;
 
 	/**
 	 * @see java.lang.Runnable#run()
 	 */
-	@SuppressWarnings( "unchecked" )
+	@SuppressWarnings( "unused" )
 	@Override
 	public void run() {
-		imgPlus = ( ImgPlus< T > ) datasetView.getData().getImgPlus();
 		final Bdv bdv = BdvFunctions.show( imgPlus, imgPlus.getName() );
 	}
 
