@@ -71,6 +71,20 @@ public class TutorialPlugin4< T extends RealType< T > & NativeType< T >> impleme
 				Bdv.options().addTo( bdvHandlePanel ).sourceTransform( 1, 1, 6 ) );
 		bdvSource1.setActive( true );
 
+		final ArrayList< RealPoint > points = getTutorial4Points();
+
+		final BdvSource bdvSource2 = BdvFunctions.showOverlay(
+				new OverlayForTutorial4( points ),
+				"overlay",
+				Bdv.options().addTo( bdvHandlePanel ).sourceTransform( 1, 1, 6 ) );
+		bdvSource2.setDisplayRangeBounds( 0, 1 );
+		bdvSource2.setActive( true );
+	}
+
+	/**
+	 * @return the points to be displayed.
+	 */
+	private ArrayList< RealPoint > getTutorial4Points() {
 		final String filename = "dots.csv";
 		final URL iconURL = ClassLoader.getSystemClassLoader().getResource( filename );
 		List< String > lines = null;
@@ -91,13 +105,7 @@ public class TutorialPlugin4< T extends RealType< T > & NativeType< T >> impleme
 		} catch ( final IOException e ) {
 			e.printStackTrace();
 		}
-
-		final BdvSource bdvSource2 = BdvFunctions.showOverlay(
-				new OverlayForTutorial4( points ),
-				"overlay",
-				Bdv.options().addTo( bdvHandlePanel ).sourceTransform( 1, 1, 6 ) );
-		bdvSource2.setDisplayRangeBounds( 0, 1 );
-		bdvSource2.setActive( true );
+		return points;
 	}
 
 }
