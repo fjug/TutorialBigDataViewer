@@ -11,6 +11,9 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import net.imglib2.type.NativeType;
+import net.imglib2.type.numeric.RealType;
+
 import org.scijava.command.Command;
 import org.scijava.plugin.Menu;
 import org.scijava.plugin.Parameter;
@@ -23,8 +26,6 @@ import bdv.util.BdvFunctions;
 import bdv.util.BdvHandlePanel;
 import bdv.util.BdvStackSource;
 import mpicbg.spim.data.SpimDataException;
-import net.imglib2.type.NativeType;
-import net.imglib2.type.numeric.RealType;
 
 /**
  * Plugin that opens the active image using the
@@ -52,7 +53,7 @@ public class TutorialPlugin5< T extends RealType< T > & NativeType< T >> impleme
 	public void run() {
 		// get default XML from resources if nothing given
 		if ( xmlFilename.isEmpty() ) {
-			final URL iconURL = ClassLoader.getSystemClassLoader().getResource( "openconnectome-bock11-neariso.xml" );
+			final URL iconURL = ClassLoader.getSystemClassLoader().getResource( "catmaid-abd1.5.xml" );
 			final File file = new File( iconURL.getPath() );
 			xmlFilename = file.getAbsolutePath();
 		}

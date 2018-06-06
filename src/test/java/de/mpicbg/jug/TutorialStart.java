@@ -11,8 +11,6 @@ import javax.swing.JOptionPane;
 
 import net.imagej.Dataset;
 import net.imagej.ImageJ;
-import net.imagej.display.DatasetView;
-import net.imagej.display.ImageDisplay;
 
 /**
  * @author jug
@@ -25,12 +23,12 @@ public class TutorialStart {
 		final File file = new File( iconURL.getPath() );
 
 		final ImageJ ij = new ImageJ();
+		ij.ui().showUI();
+
 		try {
 			if ( file.exists() && file.canRead() ) {
 				final Dataset ds = ij.scifio().datasetIO().open( file.getAbsolutePath() );
-				final ImageDisplay display = ( ImageDisplay ) ij.display().createDisplay( ds );
-				final DatasetView dsv = ij.imageDisplay().getActiveDatasetView( display );
-				ij.ui().showUI();
+				ij.ui().show( ds );
 
 				JOptionPane.showMessageDialog(
 						null,
