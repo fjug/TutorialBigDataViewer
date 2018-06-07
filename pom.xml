@@ -14,7 +14,7 @@
 	<version>1.0.0</version>
 
 	<name>BDV, Vistools, and Caching tutorial</name>
-	<description>Plugins made for Learnathon 2017.</description>
+	<description>Plugins made for Learnathon 2017, adapted for 2018.</description>
 	<url>https://imagej.net/BigDataViewer</url>
 	<inceptionYear>2017</inceptionYear>
 	<organization>
