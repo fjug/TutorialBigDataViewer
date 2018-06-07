@@ -20,7 +20,6 @@ import net.imglib2.type.numeric.ARGBType;
 import net.imglib2.type.numeric.RealType;
 
 import org.scijava.command.Command;
-import org.scijava.plugin.Menu;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 
@@ -35,9 +34,7 @@ import bdv.util.BdvSource;
  *
  * @author jug
  */
-@Plugin( menu = { @Menu( label = "Tutorials" ),
-				  @Menu( label = "BDV Vistools" ),
-				  @Menu( label = "Tutorial Plugin 3" ) }, description = "Multiple sources, tainted.", headless = false, type = Command.class )
+@Plugin( menuPath = "Tutorials>BDV Vistools>Tutorial Plugin 3", description = "Multiple sources, tainted.", headless = false, type = Command.class )
 public class TutorialPlugin3< T extends RealType< T > & NativeType< T >> implements Command {
 
 	@Parameter
