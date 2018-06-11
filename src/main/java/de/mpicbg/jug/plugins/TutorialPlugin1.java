@@ -8,7 +8,6 @@ import net.imglib2.type.NativeType;
 import net.imglib2.type.numeric.RealType;
 
 import org.scijava.command.Command;
-import org.scijava.plugin.Menu;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 
@@ -21,9 +20,7 @@ import bdv.util.BdvFunctions;
  *
  * @author jug
  */
-@Plugin( menu = { @Menu( label = "Tutorials" ),
-				  @Menu( label = "BDV Vistools" ),
-				  @Menu( label = "Tutorial Plugin 1" ) }, description = "Hello BDV.", headless = false, type = Command.class )
+@Plugin( menuPath = "Tutorials>BDV Vistools>Tutorial Plugin 1", description = "Hello BDV.", headless = false, type = Command.class )
 public class TutorialPlugin1< T extends RealType< T > & NativeType< T >> implements Command {
 
 	@Parameter( label = "3D ImgPlus to be shown." )

@@ -15,7 +15,6 @@ import net.imglib2.type.NativeType;
 import net.imglib2.type.numeric.RealType;
 
 import org.scijava.command.Command;
-import org.scijava.plugin.Menu;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 
@@ -33,9 +32,7 @@ import mpicbg.spim.data.SpimDataException;
  *
  * @author jug
  */
-@Plugin( menu = { @Menu( label = "Tutorials" ),
-				  @Menu( label = "BDV Vistools" ),
-				  @Menu( label = "Tutorial Plugin 5" ) }, description = "Remote sources.", headless = false, type = Command.class )
+@Plugin( menuPath = "Tutorials>BDV Vistools>Tutorial Plugin 5", description = "Remote sources.", headless = false, type = Command.class )
 public class TutorialPlugin5< T extends RealType< T > & NativeType< T >> implements Command {
 
 	@Parameter( label = "File (empty for default): " )

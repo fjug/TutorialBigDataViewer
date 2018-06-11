@@ -16,7 +16,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import org.scijava.command.Command;
-import org.scijava.plugin.Menu;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 
@@ -35,9 +34,7 @@ import net.imglib2.type.numeric.RealType;
  *
  * @author jug
  */
-@Plugin( menu = { @Menu( label = "Tutorials" ),
-				  @Menu( label = "BDV Vistools" ),
-				  @Menu( label = "Tutorial Plugin 4" ) }, description = "Overlays", headless = false, type = Command.class )
+@Plugin( menuPath = "Tutorials>BDV Vistools>Tutorial Plugin 4", description = "Overlays", headless = false, type = Command.class )
 public class TutorialPlugin4< T extends RealType< T > & NativeType< T >> implements Command {
 
 	@Parameter( label = "3D ImgPlus to be shown." )
