@@ -4,8 +4,10 @@
 package de.mpicbg.jug.plugins;
 
 import java.awt.BorderLayout;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -87,7 +89,9 @@ public class TutorialPlugin4< T extends RealType< T > & NativeType< T >> impleme
 		
 		try {
 			final boolean IS_WINDOWS = System.getProperty( "os.name" ).contains( "indow" );
-			final String osAppropriatePath = IS_WINDOWS ? iconURL.getPath().substring(1) : iconURL.getPath();
+			final String osAppropriatePath = IS_WINDOWS 
+					? new File(URLDecoder.decode(iconURL.getPath(),"UTF-8")).getPath()
+					: iconURL.getPath();			
 			lines = Files.readAllLines( Paths.get(osAppropriatePath), Charset.forName( "UTF-8" ) );
 			for ( final String line : lines ) {
 				if ( line.startsWith( "#" ) ) {
